@@ -1,0 +1,50 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+      
+    - name: Run Playwright tests
+      run: npx playwright test
+      env:
+        # Set credentials from GitHub secrets
+        QA_STANDARD_USER_EMAIL: ${{ secrets.QA_STANDARD_USER_EMAIL }}
+        QA_STANDARD_USER_PASSWORD: ${{ secrets.QA_STANDARD_USER_PASSWORD }}
+        QA_STANDARD_USER_NAME: ${{ secrets.QA_STANDARD_USER_NAME }}
+        QA_ADMIN_USER_EMAIL: ${{ secrets.QA_ADMIN_USER_EMAIL }}
+        QA_ADMIN_USER_PASSWORD: ${{ secrets.QA_ADMIN_USER_PASSWORD }}
+        QA_ADMIN_USER_NAME: ${{ secrets.QA_ADMIN_USER_NAME }}
+        QA_READONLY_USER_EMAIL: ${{ secrets.QA_READONLY_USER_EMAIL }}
+        QA_READONLY_USER_PASSWORD: ${{ secrets.QA_READONLY_USER_PASSWORD }}
+        QA_READONLY_USER_NAME: ${{ secrets.QA_READONLY_USER_NAME }}
+        # Base URL can also be configured per environment
+        BASE_URL: ${{ secrets.TEST_ENVIRONMENT_URL }}
+        
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
