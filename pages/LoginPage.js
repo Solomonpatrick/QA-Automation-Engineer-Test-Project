@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { TIMEOUTS, SELECTORS, ROUTES } from '../config/constants';
+import { TIMEOUTS, SELECTORS } from '../config/constants';
 import { environment } from '../config/environment';
 
 class LoginPage {
@@ -7,7 +7,7 @@ class LoginPage {
     this.page = page;
     this.emailInput = page.locator(SELECTORS.LOGIN_EMAIL);
     this.passwordInput = page.locator(SELECTORS.LOGIN_PASSWORD);
-    this.signInButton = page.getByRole('button', { name: 'Sign In' });
+    this.signInButton = page.locator(SELECTORS.SIGN_IN_BUTTON);
     this.errorMessage = page.locator('.MuiTypography-root.MuiTypography-body1.mui-hv915t');
   }
 
@@ -31,6 +31,16 @@ class LoginPage {
   async verifyErrorMessage(expectedText) {
     await expect(this.errorMessage).toBeVisible({ timeout: TIMEOUTS.SHORT });
     await expect(this.errorMessage).toContainText(expectedText);
+  }
+
+  async verifyLoginPageLoaded() {
+    // Check we're on the login page
+    await expect(this.page).toHaveURL(/.*\/next\/signin.*/, { timeout: TIMEOUTS.MEDIUM });
+    expect(this.page.url()).toContain('/next/signin');
+    
+    // Verify login form is visible
+    await expect(this.emailInput).toBeVisible({ timeout: TIMEOUTS.MEDIUM });
+    await expect(this.passwordInput).toBeVisible({ timeout: TIMEOUTS.MEDIUM });
   }
 }
 

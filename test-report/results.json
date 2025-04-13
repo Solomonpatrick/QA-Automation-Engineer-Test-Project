@@ -1,0 +1,496 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\solom\\qa-automation-project\\playwright.config.js",
+    "rootDir": "C:/Users/solom/qa-automation-project/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "test-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-report/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/solom/qa-automation-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/solom/qa-automation-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 180000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.51.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "dashboard.spec.js",
+      "file": "dashboard.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dashboard Tests",
+          "file": "dashboard.spec.js",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Happy Path #1: Verify dashboard title is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11750,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:49:15.093Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\dashboard-Dashboard-Tests--00c6f--dashboard-title-is-visible-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1bb41a2bd6df77ed2f7-ad7a74eefa1662f332f4",
+              "file": "dashboard.spec.js",
+              "line": 28,
+              "column": 7
+            },
+            {
+              "title": "Happy Path #2: Check that power & energy chart is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11160,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Found chart title in frame: https://qa-test.intellisense.io/grafana/d/begecrr39730ge/qa-automation-test-project?kiosk=&_dash.hideTimePicker&_dash.hideVariables&_dash.hideLinks&theme=light&from=2024-12-10T10:01:00.000Z&to=2025-03-13T23:55:00.000Z&_v=1&var-resolution=shift&timezone=Europe%2FLondon&orgId=1\n"
+                        },
+                        {
+                          "text": "Number of iframes found: 2\n"
+                        },
+                        {
+                          "text": "Total frames: 3\n"
+                        },
+                        {
+                          "text": "Frame 0 URL: https://qa-test.intellisense.io/next/dashboards/g/2082/QA\n"
+                        },
+                        {
+                          "text": "Frame 1 URL: about:blank\n"
+                        },
+                        {
+                          "text": "Frame 2 URL: https://qa-test.intellisense.io/grafana/d/begecrr39730ge/qa-automation-test-project?kiosk=&_dash.hideTimePicker&_dash.hideVariables&_dash.hideLinks&theme=light&from=2024-12-10T10:01:00.000Z&to=2025-03-13T23:55:00.000Z&_v=1&var-resolution=shift&timezone=Europe%2FLondon&orgId=1\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:49:15.101Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\dashboard-Dashboard-Tests--59d53-wer-energy-chart-is-visible-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1bb41a2bd6df77ed2f7-4826c614c31b6e735b33",
+              "file": "dashboard.spec.js",
+              "line": 33,
+              "column": 7
+            },
+            {
+              "title": "Happy Path #3: Filter data by date range",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 20620,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Found chart title in frame: https://qa-test.intellisense.io/grafana/d/begecrr39730ge/qa-automation-test-project?kiosk=&_dash.hideTimePicker&_dash.hideVariables&_dash.hideLinks&theme=light&from=2024-12-10T10:01:00.000Z&to=2025-03-13T23:55:00.000Z&_v=1&var-resolution=shift&timezone=Europe%2FLondon&orgId=1\n"
+                        },
+                        {
+                          "text": "Data before filter: []\n"
+                        },
+                        {
+                          "text": "Data after filter: []\n"
+                        },
+                        {
+                          "text": "Filter test completed successfully\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:49:26.425Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\dashboard-Dashboard-Tests--ee515-3-Filter-data-by-date-range-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1bb41a2bd6df77ed2f7-49e4fa99524ac1186b20",
+              "file": "dashboard.spec.js",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "Happy Path #4: Navigate to different dashboard",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 111534,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Found chart title in frame: https://qa-test.intellisense.io/grafana/d/begecrr39730ge/qa-automation-test-project?kiosk=&_dash.hideTimePicker&_dash.hideVariables&_dash.hideLinks&theme=light&from=2024-12-10T10:01:00.000Z&to=2025-03-13T23:55:00.000Z&_v=1&var-resolution=shift&timezone=Europe%2FLondon&orgId=1\n"
+                        },
+                        {
+                          "text": "Data before filter: []\n"
+                        },
+                        {
+                          "text": "Attempting to navigate to 'Pavi Qa test' dashboard\n"
+                        },
+                        {
+                          "text": "Navigation failed with primary selector: url.includes is not a function, trying alternatives\n"
+                        },
+                        {
+                          "text": "Alternative navigation also failed: locator.click: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('text=Dashboards').first()\u001b[22m\n, using direct URL navigation\n"
+                        },
+                        {
+                          "text": "Navigation failed with primary selector: url.includes is not a function, trying alternatives\n"
+                        },
+                        {
+                          "text": "Alternative navigation also failed: locator.click: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('text=Dashboards').first()\u001b[22m\n, using direct URL navigation\n"
+                        },
+                        {
+                          "text": "Successfully navigated to different dashboard\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:49:27.024Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\dashboard-Dashboard-Tests--4b9b9-gate-to-different-dashboard-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1bb41a2bd6df77ed2f7-5e39099da77b5040d8ef",
+              "file": "dashboard.spec.js",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "Happy Path #5: Logout functionality",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 10910,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:49:47.052Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\dashboard-Dashboard-Tests-Happy-Path-5-Logout-functionality-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1bb41a2bd6df77ed2f7-ffd4b1cf672a0b774a6d",
+              "file": "dashboard.spec.js",
+              "line": 98,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "login.spec.js",
+      "file": "login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Tests",
+          "file": "login.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Happy Path: User can log in successfully and navigate to QA Dashboard",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5095,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:49:57.973Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\login-Login-Tests-Happy-Pa-7ce67-nd-navigate-to-QA-Dashboard-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "badc1754af1944f68b2b-b2fe8ff262bc8990df0e",
+              "file": "login.spec.js",
+              "line": 13,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "negativeFlows.spec.js",
+      "file": "negativeFlows.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Negative / Alternative Flows",
+          "file": "negativeFlows.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Unhappy Path #1: Invalid login credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1261,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:50:03.080Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\negativeFlows-Negative-Alt-c6696-1-Invalid-login-credentials-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e42b379c4bac58eca57e-7b67b48b0358a232b55e",
+              "file": "negativeFlows.spec.js",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "Unhappy Path #2: Attempting to access dashboard without login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1973,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-13T22:50:04.350Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\solom\\qa-automation-project\\test-results\\negativeFlows-Negative-Alt-a4e48-ess-dashboard-without-login-chromium\\test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e42b379c4bac58eca57e-cd7751182e5b2b5c3ddc",
+              "file": "negativeFlows.spec.js",
+              "line": 32,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-04-13T22:49:14.401Z",
+    "duration": 124348.834,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

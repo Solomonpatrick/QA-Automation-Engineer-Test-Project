@@ -4,9 +4,8 @@ import { environment } from '../config/environment';
 
 export async function navigateToDashboard(page, dashboardName) {
   await page.goto(`${environment.baseURL}/next/dashboards`);
-  await page.waitForLoadState('networkidle');
   
-  const dashboardLink = page.locator(`//a[normalize-space()='${dashboardName}']`);
+  const dashboardLink = page.locator(`text=${dashboardName}`);
   await expect(dashboardLink).toBeVisible({ timeout: TIMEOUTS.MEDIUM });
   await dashboardLink.click();
   

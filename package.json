@@ -1,16 +1,21 @@
 {
   "name": "qa-automation-project",
   "version": "1.0.0",
+  "description": "Playwright automation framework for QA testing",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test --headed"
+    "test": "playwright test --headed",
+    "test:headless": "playwright test",
+    "report": "playwright show-report"
   },
-  "keywords": [],
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.51.1",
-    "@types/node": "^22.14.1"
+    "@playwright/test": "^1.40.0"
   }
 }
